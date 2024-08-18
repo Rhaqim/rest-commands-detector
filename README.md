@@ -11,7 +11,7 @@ Building rezt requires a [supported version of Node and Rust](https://github.com
 To run the build, run:
 
 ```sh
-$ npm run build
+npm run build
 ```
 
 This command uses the [@neon-rs/cli](https://www.npmjs.com/package/@neon-rs/cli) utility to assemble the binary Node addon from the output of `cargo`.
@@ -32,17 +32,17 @@ $ node
 
 In the project directory, you can run:
 
-#### `npm install`
+### `npm install`
 
 Installs the project, including running `npm run build`.
 
-#### `npm run build`
+### `npm run build`
 
 Builds the Node addon (`index.node`) from source, generating a release build with `cargo --release`.
 
 Additional [`cargo build`](https://doc.rust-lang.org/cargo/commands/cargo-build.html) arguments may be passed to `npm run build` and similar commands. For example, to enable a [cargo feature](https://doc.rust-lang.org/cargo/reference/features.html):
 
-```
+```sh
 npm run build -- --feature=beetle
 ```
 
@@ -62,7 +62,7 @@ Runs the unit tests by calling `cargo test`. You can learn more about [adding te
 
 The directory structure of this project is:
 
-```
+```sh
 rezt/
 ├── Cargo.toml
 ├── README.md
