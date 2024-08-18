@@ -1,0 +1,17 @@
+[package]
+name = "rezt"
+version = "0.1.0"
+description = "REST testing extention"
+authors = ["Rhaqim"]
+license = "ISC"
+edition = "2021"
+exclude = ["index.node"]
+
+[lib]
+crate-type = ["cdylib"]
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+neon = "1"
+regex = "1.10.6"
