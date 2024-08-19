@@ -16,7 +16,14 @@ fn detect_methods_in_file(mut cx: FunctionContext) -> JsResult<JsString> {
         let endpoint = caps.get(2).map_or("", |e| e.as_str());
 
         // Construct the curl command
-        let curl_command = format!("\n{} http://localhost:8080{}\n", method, endpoint);
+        let mut curl_command = format!("\n{} http://localhost:8080{} HTTP/1.1\n", method, endpoint);
+
+        if method == "POST" || method == "PUT" {
+            curl_command = format!(
+                "{} http://localhost:8080{} HTTP/1.1\ncontent-type: application/json\n\n{{}}\n",
+                method, endpoint
+            );
+        }
         curl_commands.push(curl_command);
     }
 
